@@ -1,18 +1,32 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<CarouselPage xmlns="http://xamarin.com/schemas/2014/forms"
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"
              xmlns:local="clr-namespace:WindowCalc.Views"
              x:Class="WindowCalc.Views.MainPage"
              Title="Выберите тип окна"
-             ItemsSource="{Binding Pages}">
-    <CarouselPage.ItemTemplate>
-        <DataTemplate>
-            <ContentPage>
-                <StackLayout Orientation="Vertical">
-                    <Label Text="{Binding Description}" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand"/>
-                    <Image Source="{Binding Image}"/>
-                </StackLayout>
-            </ContentPage>
-        </DataTemplate>
-    </CarouselPage.ItemTemplate>
-</CarouselPage>
+             >
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical">
+            <controls:CarouselViewControl Orientation="Horizontal" InterPageSpacing="10" 
+                                          Position="{Binding SelectedPosition}"
+                                          ItemsSource="{Binding Pages}" VerticalOptions="FillAndExpand" 
+                                          HorizontalOptions="FillAndExpand" ShowIndicators="True" ShowArrows="True">
+                <controls:CarouselViewControl.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Padding="32">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="3*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Image Grid.Row="0" Source="{Binding Image}" VerticalOptions="Center"/>
+                            <Label Grid.Row="1" Text="{Binding Description}" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand"/>
+                        </Grid>
+                    </DataTemplate>
+                </controls:CarouselViewControl.ItemTemplate>
+            </controls:CarouselViewControl>
+            <Button Grid.Row="2" Text="Выбрать" Command="{Binding OnSelectCommand}" VerticalOptions="Start" HorizontalOptions="Center" Margin="10"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

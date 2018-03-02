@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Text;
 using WindowCalc.Models;
 using WindowCalc.Views;
+using Xamarin.Forms;
 
 namespace WindowCalc.ViewModels
 {
@@ -12,6 +13,7 @@ namespace WindowCalc.ViewModels
         #region Fields
         private ObservableCollection<WindowType> pages;
         private IMainPage view;
+        private int selectedPosition;
         #endregion
 
         #region Properties
@@ -20,11 +22,20 @@ namespace WindowCalc.ViewModels
             get { return pages; }
             set { SetProperty(ref pages, value); }
         }
+
+        public int SelectedPosition
+        {
+            get { return selectedPosition; }
+            set { SetProperty(ref selectedPosition, value); }
+        }
+
+        public Command OnSelectCommand { get; set; }
         #endregion
 
         public WindowsTypeViewModel(IMainPage view)
         {
             this.view = view;
+            OnSelectCommand = new Command(DoSelect);
             List<WindowType> pages = new List<WindowType>();
             pages.Add(new WindowType() { Description = "Одинарное глухое окно", Image = "k11.png" });
             pages.Add(new WindowType() { Description = "Одинарное окно с поворотной створкой", Image = "k12.png" });
@@ -40,5 +51,12 @@ namespace WindowCalc.ViewModels
             pages.Add(new WindowType() { Description = "Балконный блок с глухим окном и поворотно-откидной дверью", Image = "k43.png" });
             Pages = new ObservableCollection<WindowType>(pages);
         }
+
+        #region Commands
+        private void DoSelect()
+        {
+            view.ShowAlert(selectedPosition.ToString());
+        } 
+        #endregion
     }
 }

@@ -10,12 +10,17 @@ using Xamarin.Forms.Xaml;
 namespace WindowCalc.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class MainPage : CarouselPage, IMainPage
+    public partial class MainPage : ContentPage, IMainPage
 	{
 		public MainPage()
 		{
 			InitializeComponent();
             BindingContext = new WindowsTypeViewModel(this);
 		}
-	}
+
+        public void ShowAlert(string text)
+        {
+            DisplayAlert("Сообщение", $"Выбрано окно с номером {text}", "OK");
+        }
+    }
 }
