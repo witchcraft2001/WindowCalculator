@@ -14,19 +14,16 @@
                                           HorizontalOptions="FillAndExpand" ShowIndicators="True" ShowArrows="True">
                 <controls:CarouselViewControl.ItemTemplate>
                     <DataTemplate>
-                        <Grid Padding="32">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="3*"/>
-                                <RowDefinition Height="*"/>
-                                <RowDefinition Height="*"/>
-                            </Grid.RowDefinitions>
-                            <Image Grid.Row="0" Source="{Binding Image}" VerticalOptions="Center"/>
-                            <Label Grid.Row="1" Text="{Binding Description}" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand"/>
+                        <Grid Padding="10" VerticalOptions="Center">
+                            <StackLayout Orientation="Vertical" VerticalOptions="Center">
+                            <Image Source="{Binding Image}"/>
+                            <Label Text="{Binding Description}" HorizontalTextAlignment="Center" FontSize="Large"/>
+                            </StackLayout>
                         </Grid>
                     </DataTemplate>
                 </controls:CarouselViewControl.ItemTemplate>
             </controls:CarouselViewControl>
-            <Button Grid.Row="2" Text="Выбрать" Command="{Binding OnSelectCommand}" VerticalOptions="Start" HorizontalOptions="Center" Margin="10"/>
+            <Button Text="Выбрать" Command="{Binding OnSelectCommand}" VerticalOptions="Start" HorizontalOptions="Center" Margin="10"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

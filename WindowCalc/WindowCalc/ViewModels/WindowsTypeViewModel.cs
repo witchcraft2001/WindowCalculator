@@ -37,18 +37,11 @@ namespace WindowCalc.ViewModels
             this.view = view;
             OnSelectCommand = new Command(DoSelect);
             List<WindowType> pages = new List<WindowType>();
-            pages.Add(new WindowType() { Description = "Одинарное глухое окно", Image = "k11.png" });
-            pages.Add(new WindowType() { Description = "Одинарное окно с поворотной створкой", Image = "k12.png" });
-            pages.Add(new WindowType() { Description = "Одинарное окно с поворотно-откидной створкой", Image = "k13.png" });
-            pages.Add(new WindowType() { Description = "Двойное окно с поворотной створкой", Image = "k21.png" });
-            pages.Add(new WindowType() { Description = "Двойное окно с поворотно-откидной створкой", Image = "k22.png" });
-            pages.Add(new WindowType() { Description = "Тройное окно с одной поворотной створкой", Image = "k31.png" });
-            pages.Add(new WindowType() { Description = "Тройное окно с одной поворотно-откидной створкой", Image = "k32.png" });
-            pages.Add(new WindowType() { Description = "Тройное окно с двумя поворотными створками", Image = "k33.png" });
-            pages.Add(new WindowType() { Description = "Тройное окно с двумя поворотно-откидными створками", Image = "k34.png" });
-            pages.Add(new WindowType() { Description = "Балконная поворотная дверь", Image = "k41.png" });
-            pages.Add(new WindowType() { Description = "Балконный блок с глухим окном и поворотной дверью", Image = "k42.png" });
-            pages.Add(new WindowType() { Description = "Балконный блок с глухим окном и поворотно-откидной дверью", Image = "k43.png" });
+            pages.Add(new WindowType() { Description = "Одинарное окно", Image = "k12.png" });
+            pages.Add(new WindowType() { Description = "Двойное окно", Image = "k21.png" });
+            pages.Add(new WindowType() { Description = "Тройное окно", Image = "k31.png" });
+            pages.Add(new WindowType() { Description = "Балконная дверь", Image = "k41.png" });
+            pages.Add(new WindowType() { Description = "Балконный блок с дверью", Image = "k42.png" });
             Pages = new ObservableCollection<WindowType>(pages);
         }
 
