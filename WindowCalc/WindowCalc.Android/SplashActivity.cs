@@ -13,7 +13,7 @@ using Android.Widget;
 
 namespace WindowCalc.Droid
 {
-    [Activity(Label = "@string/app_name", Icon = "@drawable/icon", Theme = "@style/MyTheme.Splash", MainLauncher = true, NoHistory = true)]
+    [Activity(Label = "@string/app_name", Icon = "@drawable/ic_launcher", Theme = "@style/MyTheme.Splash", MainLauncher = true, NoHistory = true)]
     public class SplashActivity : AppCompatActivity
     {
         protected override void OnResume()
