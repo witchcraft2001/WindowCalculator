@@ -18,6 +18,11 @@ namespace WindowCalc.Views
             BindingContext = new WindowsTypeViewModel(this);
 		}
 
+        public async void NavigateToSingleWindowCalculator()
+        {
+            await Navigation.PushAsync(new SingleWindowPage());
+        }
+
         public void ShowAlert(string text)
         {
             DisplayAlert("Сообщение", $"Выбрано окно с номером {text}", "OK");

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WindowCalc.Views.SingleWindowPage"
+             Title="Расчет одинарного окна">
+    <ContentPage.Content>
+        <StackLayout Margin="16">
+            <Image Source="{Binding SelectedWindowType.Image}" Margin="16"/>
+            <Label Text="Выберите тип окна:"/>
+            <Picker ItemsSource="{Binding WindowTypes}" 
+                    SelectedItem="{Binding SelectedWindowType}" 
+                    ItemDisplayBinding="{Binding Description}" 
+                    Title="Выберите тип окна"/>
+            <Label Text="{Binding Path=Model.Height, StringFormat='Размер окна по высоте, см: {0:N}'}"/>
+            <Slider Maximum="200" Minimum="30" Value="{Binding Model.Height}"/>
+            <Label Text="{Binding Path=Model.Width, StringFormat='Размер окна по ширине, см: {0:N}'}"/>
+            <Slider Maximum="300" Minimum="50" Value="{Binding Model.Width}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

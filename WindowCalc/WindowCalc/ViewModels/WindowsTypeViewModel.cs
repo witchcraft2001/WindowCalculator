@@ -48,7 +48,8 @@ namespace WindowCalc.ViewModels
         #region Commands
         private void DoSelect()
         {
-            view.ShowAlert(selectedPosition.ToString());
+            //view.ShowAlert(selectedPosition.ToString());
+            view.NavigateToSingleWindowCalculator();
         } 
         #endregion
     }
