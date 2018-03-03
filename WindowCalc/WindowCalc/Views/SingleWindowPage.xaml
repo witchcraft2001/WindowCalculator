@@ -27,30 +27,33 @@
                     </Grid.RowDefinitions>
                     <Label Grid.Column="0" Grid.Row="0" VerticalOptions="Center" Text="Москитная сетка" FontSize="Medium"/>
                     <Switch Grid.Column="1" Grid.Row="0" HorizontalOptions="End" IsToggled="{Binding Model.IsMosquitGridExist}"/>
-                    <Label Grid.Column="0" Grid.Row="1" VerticalOptions="Center" Text="Подоконник" FontSize="Medium"/>
+                    <Label Grid.Column="0" Grid.Row="1" VerticalOptions="Center" Text="Отлив" FontSize="Medium"/>
                     <Switch Grid.Column="1" Grid.Row="1" HorizontalOptions="End" IsToggled="{Binding Model.IsTideExist}"/>
                 </Grid>
                 <Label Text="Фурнитура:"/>
                 <Picker ItemsSource="{Binding Fittings}" 
-                    SelectedItem="{Binding SelectedFitting}" 
+                    SelectedIndex="{Binding SelectedFitting}" 
                     Title="Выберите тип фурнитуры"/>
                 <Label Text="Ламинация профиля:"/>
                 <Picker ItemsSource="{Binding Laminates}" 
-                    SelectedItem="{Binding SelectedLaminate}" 
+                    SelectedIndex="{Binding SelectedLaminate}" 
                     Title="Выберите вид ламинации профиля"/>
                 <Label Text="Подоконник:"/>
                 <Picker ItemsSource="{Binding Sills}" 
-                    SelectedItem="{Binding SelectedSill}" 
+                    SelectedIndex="{Binding SelectedSill}"
                     Title="Выберите тип подоконника"/>
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition Width="Auto"/>
-                </Grid.ColumnDefinitions>
-                    <Label Grid.Column="0" VerticalOptions="Center" Text="Монтаж" FontSize="Medium"/>
-                <Switch Grid.Column="1" HorizontalOptions="End" IsToggled="{Binding Model.IsMontageExist}"/>
-            </Grid>
-        </StackLayout>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0" VerticalOptions="Center" Text="Монтаж" FontSize="Medium"/>
+                    <Switch Grid.Column="1" HorizontalOptions="End" IsToggled="{Binding Model.IsMontageExist}"/>
+                </Grid>
+                <Label Text="{Binding Path=Model.Cost, StringFormat='Стоимость окна: {0:N} руб.'}" FontSize="Large"/>
+                <BoxView HeightRequest="1" HorizontalOptions="FillAndExpand" BackgroundColor="Black" Margin="8,0,0,0"/>
+                <Button Text="Оформить заказ" HorizontalOptions="CenterAndExpand" Command="{Binding OrderCommand}" Margin="16"/>
+            </StackLayout>
         </ScrollView>
     </ContentPage.Content>
 </ContentPage>

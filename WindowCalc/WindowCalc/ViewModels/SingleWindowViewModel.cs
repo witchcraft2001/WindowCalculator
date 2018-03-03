@@ -23,37 +23,37 @@ namespace WindowCalc.ViewModels
         private ObservableCollection<String> fittings;
         private ObservableCollection<String> laminates;
         private ObservableCollection<String> sills;
-        private String selectedSill;
-        private String selectedFitting;
-        private String selectedLaminate;
+        private int selectedSill;
+        private int selectedFitting;
+        private int selectedLaminate;
         #endregion
 
         #region Properties
-        public String SelectedSill
+        public int SelectedSill
         {
             get { return selectedSill; }
             set {
-                Model.Sill = (WindowSillTypeEnum)Enum.Parse(typeof(WindowSillTypeEnum), value);
+                Model.Sill = (WindowSillTypeEnum)value;
                 SetProperty(ref selectedSill, value);
             }
         }
 
-        public String SelectedFitting
+        public int SelectedFitting
         {
             get { return selectedFitting; }
             set
             {
-                Model.Fitting = (FittingTypeEnum)Enum.Parse(typeof(FittingTypeEnum), value);
+                Model.Fitting = (FittingTypeEnum)value;
                 SetProperty(ref selectedFitting, value);
             }
         }
 
-        public String SelectedLaminate
+        public int SelectedLaminate
         {
             get { return selectedLaminate; }
             set
             {
-                Model.Laminate = (WindowLaminateEnum)Enum.Parse(typeof(WindowLaminateEnum), value);
+                Model.Laminate = (WindowLaminateEnum)value;
                 SetProperty(ref selectedLaminate, value);
             }
         }
@@ -84,7 +84,10 @@ namespace WindowCalc.ViewModels
         public WindowType SelectedWindowType
         {
             get { return selectedWindowType; }
-            set { SetProperty(ref selectedWindowType, value); }
+            set {
+                Model.WindType = value.Id;
+                SetProperty(ref selectedWindowType, value);
+            }
         }
 
         public SingleWindowModel Model
@@ -117,6 +120,7 @@ namespace WindowCalc.ViewModels
                 sills.Add(GetDescriptionEnum(item));
             }
             Sills = new ObservableCollection<string>(sills);
+            SelectedSill = 0;
             
             var fittings = new List<String>();
             foreach (FittingTypeEnum item in Enum.GetValues(typeof(FittingTypeEnum)))
@@ -124,13 +128,15 @@ namespace WindowCalc.ViewModels
                 fittings.Add(GetDescriptionEnum(item));
             }
             Fittings = new ObservableCollection<string>(fittings);
-            
+            SelectedFitting = 0;
+
             var laminatings = new List<String>();
             foreach (WindowLaminateEnum item in Enum.GetValues(typeof(WindowLaminateEnum)))
             {
                 laminatings.Add(GetDescriptionEnum(item));
             }
             Laminates = new ObservableCollection<string>(laminatings);
+            SelectedLaminate = 0;
         }
 
         public string GetDescriptionEnum(Enum item){
