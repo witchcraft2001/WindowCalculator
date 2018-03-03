@@ -130,7 +130,7 @@
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
     <ProjectReference Include="..\WindowCalc\WindowCalc.csproj">
-      <Project>{904B87E5-A324-47EB-BD23-DE56D1935410}</Project>
+      <Project>{10255942-D7BE-4910-9A54-6F7B02A268F7}</Project>
       <Name>WindowCalc</Name>
     </ProjectReference>
   </ItemGroup>

@@ -1,13 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Text;
-using System.Linq;
 using WindowCalc.Helpers;
 using WindowCalc.Models;
 using WindowCalc.Views;
 using Xamarin.Forms;
-using Java.Util;
 using System.Reflection;
 using System.ComponentModel;
 
