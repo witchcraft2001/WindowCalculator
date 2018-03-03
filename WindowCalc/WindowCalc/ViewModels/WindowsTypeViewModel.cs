@@ -37,11 +37,11 @@ namespace WindowCalc.ViewModels
             this.view = view;
             OnSelectCommand = new Command(DoSelect);
             List<WindowType> pages = new List<WindowType>();
-            pages.Add(new WindowType() { Description = "Одинарное окно", Image = "k12.png" });
-            pages.Add(new WindowType() { Description = "Двойное окно", Image = "k21.png" });
-            pages.Add(new WindowType() { Description = "Тройное окно", Image = "k31.png" });
-            pages.Add(new WindowType() { Description = "Балконная дверь", Image = "k41.png" });
-            pages.Add(new WindowType() { Description = "Балконный блок с дверью", Image = "k42.png" });
+            pages.Add(new WindowType() { Description = "Одностворчатое окно", Image = "k12_big.png" });
+            pages.Add(new WindowType() { Description = "Двустворчатое окно", Image = "k21_big.png" });
+            pages.Add(new WindowType() { Description = "Трёхстворчатое окно", Image = "k31_big.png" });
+            pages.Add(new WindowType() { Description = "Балконная дверь", Image = "k41_big.png" });
+            pages.Add(new WindowType() { Description = "Балконный блок с дверью", Image = "k42_big.png" });
             Pages = new ObservableCollection<WindowType>(pages);
         }
 

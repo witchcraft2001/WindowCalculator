@@ -23,6 +23,8 @@ namespace WindowCalc.Models
         protected double tideCost = 3;
         // Стоимость 10 см подоконника
         protected double[] sillCost = { 25, 60 };
+        // Стоимость монтажа
+        protected double montageCost = 0;
 
         protected int width = 100;
         protected int height = 120;
@@ -37,6 +39,8 @@ namespace WindowCalc.Models
         protected WindowLaminateEnum laminate;
         //Фурнитура
         protected FittingTypeEnum fitting;
+        //Монтаж
+        protected bool isMontageExist;
         #endregion
 
         #region Properties
@@ -87,6 +91,16 @@ namespace WindowCalc.Models
             get { return isTideExist; }
             set {
                 SetProperty(ref isTideExist, value);
+                OnPropertyChanged("Cost");
+            }
+        }
+
+        public bool IsMontageExist
+        {
+            get { return isMontageExist; }
+            set
+            {
+                SetProperty(ref isMontageExist, value);
                 OnPropertyChanged("Cost");
             }
         }

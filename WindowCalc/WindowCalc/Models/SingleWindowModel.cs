@@ -47,6 +47,8 @@ namespace WindowCalc.Models
                 result += (IsTideExist) ? Width * tideCost : 0;
                 // Подоконник
                 result += sillCost[(int)Sill] * (Width / 10);
+                // Монтажные работы
+                result += (IsMontageExist) ? montageCost : 0;
                 return result;
             }
         }
