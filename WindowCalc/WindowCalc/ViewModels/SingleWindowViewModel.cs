@@ -2,10 +2,14 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
+using System.Linq;
 using WindowCalc.Helpers;
 using WindowCalc.Models;
 using WindowCalc.Views;
 using Xamarin.Forms;
+using Java.Util;
+using System.Reflection;
+using System.ComponentModel;
 
 namespace WindowCalc.ViewModels
 {
@@ -16,9 +20,61 @@ namespace WindowCalc.ViewModels
         private ISingleWindowPage view;
         private WindowType selectedWindowType;
         private SingleWindowModel model;
+        private ObservableCollection<String> fittings;
+        private ObservableCollection<String> laminates;
+        private ObservableCollection<String> sills;
+        private String selectedSill;
+        private String selectedFitting;
+        private String selectedLaminate;
         #endregion
 
         #region Properties
+        public String SelectedSill
+        {
+            get { return selectedSill; }
+            set {
+                Model.Sill = (WindowSillTypeEnum)Enum.Parse(typeof(WindowSillTypeEnum), value);
+                SetProperty(ref selectedSill, value);
+            }
+        }
+
+        public String SelectedFitting
+        {
+            get { return selectedFitting; }
+            set
+            {
+                Model.Fitting = (FittingTypeEnum)Enum.Parse(typeof(FittingTypeEnum), value);
+                SetProperty(ref selectedFitting, value);
+            }
+        }
+
+        public String SelectedLaminate
+        {
+            get { return selectedLaminate; }
+            set
+            {
+                Model.Laminate = (WindowLaminateEnum)Enum.Parse(typeof(WindowLaminateEnum), value);
+                SetProperty(ref selectedLaminate, value);
+            }
+        }
+
+        public ObservableCollection<String> Fittings {
+            get { return fittings; }
+            set { SetProperty(ref fittings, value); }
+        }
+
+        public ObservableCollection<String> Laminates
+        {
+            get { return laminates; }
+            set { SetProperty(ref laminates, value); }
+        }
+
+        public ObservableCollection<String> Sills
+        {
+            get { return sills; }
+            set { SetProperty(ref sills, value); }
+        }
+
         public ObservableCollection<WindowType> WindowTypes
         {
             get { return windowTypes; }
@@ -50,11 +106,44 @@ namespace WindowCalc.ViewModels
         {
             this.view = view;
             List<WindowType> types = new List<WindowType>();
-            types.Add(new WindowType() { Description = "Глухое окно", Image = "k11.png" });
-            types.Add(new WindowType() { Description = "Поворотное окно", Image = "k12.png" });
-            types.Add(new WindowType() { Description = "Поворотно-откидное окно", Image = "k13.png" });
+            types.Add(new WindowType() { Id = 0, Description = "Глухое окно", Image = "k11.png" });
+            types.Add(new WindowType() { Id = 1, Description = "Поворотное окно", Image = "k12.png" });
+            types.Add(new WindowType() { Id = 2, Description = "Поворотно-откидное окно", Image = "k13.png" });
             WindowTypes = new ObservableCollection<WindowType>(types);
             SelectedWindowType = WindowTypes[0];
+            var sills = new List<String>();
+            foreach (WindowSillTypeEnum item in Enum.GetValues(typeof(WindowSillTypeEnum)))
+            {
+                sills.Add(GetDescriptionEnum(item));
+            }
+            Sills = new ObservableCollection<string>(sills);
+            
+            var fittings = new List<String>();
+            foreach (FittingTypeEnum item in Enum.GetValues(typeof(FittingTypeEnum)))
+            {
+                fittings.Add(GetDescriptionEnum(item));
+            }
+            Fittings = new ObservableCollection<string>(fittings);
+            
+            var laminatings = new List<String>();
+            foreach (WindowLaminateEnum item in Enum.GetValues(typeof(WindowLaminateEnum)))
+            {
+                laminatings.Add(GetDescriptionEnum(item));
+            }
+            Laminates = new ObservableCollection<string>(laminatings);
+        }
+
+        public string GetDescriptionEnum(Enum item){
+            FieldInfo fi = item.GetType().GetField(item.ToString());
+            DescriptionAttribute[] attributes = (DescriptionAttribute[])fi.GetCustomAttributes(typeof(DescriptionAttribute), false);
+            if (attributes.Length > 0)
+            {
+                return attributes[0].Description;
+            }
+            else
+            {
+                return item.ToString();
+            }
         }
     }
 }

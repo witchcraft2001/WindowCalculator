@@ -4,6 +4,7 @@
              x:Class="WindowCalc.Views.SingleWindowPage"
              Title="Расчет одинарного окна">
     <ContentPage.Content>
+        <ScrollView>
         <StackLayout Margin="16">
             <Image Source="{Binding SelectedWindowType.Image}" Margin="16"/>
             <Label Text="Выберите тип окна:"/>
@@ -15,6 +16,41 @@
             <Slider Maximum="200" Minimum="30" Value="{Binding Model.Height}"/>
             <Label Text="{Binding Path=Model.Width, StringFormat='Размер окна по ширине, см: {0:N}'}"/>
             <Slider Maximum="300" Minimum="50" Value="{Binding Model.Width}"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Label Grid.Column="0" Grid.Row="0" VerticalOptions="Center" Text="Москитная сетка" FontSize="Medium"/>
+                    <Switch Grid.Column="1" Grid.Row="0" HorizontalOptions="End" IsToggled="{Binding Model.IsMosquitGridExist}"/>
+                    <Label Grid.Column="0" Grid.Row="1" VerticalOptions="Center" Text="Подоконник" FontSize="Medium"/>
+                    <Switch Grid.Column="1" Grid.Row="1" HorizontalOptions="End" IsToggled="{Binding Model.IsTideExist}"/>
+                </Grid>
+                <Label Text="Фурнитура:"/>
+                <Picker ItemsSource="{Binding Fittings}" 
+                    SelectedItem="{Binding SelectedFitting}" 
+                    Title="Выберите тип фурнитуры"/>
+                <Label Text="Ламинация профиля:"/>
+                <Picker ItemsSource="{Binding Laminates}" 
+                    SelectedItem="{Binding SelectedLaminate}" 
+                    Title="Выберите вид ламинации профиля"/>
+                <Label Text="Подоконник:"/>
+                <Picker ItemsSource="{Binding Sills}" 
+                    SelectedItem="{Binding SelectedSill}" 
+                    Title="Выберите тип подоконника"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                    <Label Grid.Column="0" VerticalOptions="Center" Text="Монтаж" FontSize="Medium"/>
+                <Switch Grid.Column="1" HorizontalOptions="End" IsToggled="{Binding Model.IsMontageExist}"/>
+            </Grid>
         </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

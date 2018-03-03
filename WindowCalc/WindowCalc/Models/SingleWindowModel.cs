@@ -5,31 +5,20 @@ using WindowCalc.Helpers;
 
 namespace WindowCalc.Models
 {
-    public class SingleWindowModel : ObservableObjects
+    public class SingleWindowModel : BaseWindowModel
     {
         #region Fields
-        private int width = 100;
-        private int height = 120;
-        private double cost;
+        //Подоконник
+        private WindowSillTypeEnum sill;
+        //Тип окна
+        private WindowTypeEnum windType;
         #endregion
 
         #region Properties
-        public int Width
+        public WindowSillTypeEnum Sill
         {
-            get { return width; }
-            set { SetProperty(ref width, value); }
-        }
-
-        public int Height
-        {
-            get { return height; }
-            set { SetProperty(ref height, value); }
-        }
-
-        public double Cost
-        {
-            get { return cost; }
-            set { SetProperty(ref cost, value); }
+            get { return sill; }
+            set { SetProperty(ref sill, value); }
         }
         #endregion
     }
