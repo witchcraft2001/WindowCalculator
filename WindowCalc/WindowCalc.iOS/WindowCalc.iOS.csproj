@@ -134,4 +134,157 @@
       <Name>WindowCalc</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\k11%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\k12%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\k12_big%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\k13%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\k21%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\k21_big%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\k22%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\k31%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\k31_big%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\k32%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\k33%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\k34%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\k41%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\k41_big%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\k42%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\k42_big%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\k43%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\k11%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\k12%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\k12_big%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\k13%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\k21%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\k21_big%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\k22%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\k31%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\k31_big%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\k32%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\k33%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\k34%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\k41%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\k41_big%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\k42%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\k42_big%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\k43%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\k11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\k12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\k12_big.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\k13.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\k21.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\k21_big.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\k22.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\k31.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\k31_big.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\k32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\k33.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\k34.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\k41.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\k41_big.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\k42.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\k42_big.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\k43.png" />
+  </ItemGroup>
 </Project>
