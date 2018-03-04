@@ -288,4 +288,13 @@
   <ItemGroup>
     <BundleResource Include="Resources\k43.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\check_big%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\check_big%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\check_big.png" />
+  </ItemGroup>
 </Project>
