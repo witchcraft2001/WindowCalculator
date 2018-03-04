@@ -1,10 +1,10 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              Title="Оформление заказа"
              x:Class="WindowCalc.Views.OrderPage">
     <ContentPage.Content>
-        <StackLayout Margin="16">
+        <StackLayout Margin="10">
             <Image Source="check_big.png" Margin="10"/>
             <Label Text="Всё готово!" FontSize="Large" HorizontalTextAlignment="Center"/>
             <Label Text="Мы готовы приступить к изготовлению Вашего окна. Укажите, пожалуйста, Ваши контактные данные, чтоб мы могли предложить Вам наиболее удобные условия доставки." FontSize="Medium" Margin="0,5"/>
