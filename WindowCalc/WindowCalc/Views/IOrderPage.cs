@@ -4,8 +4,8 @@ using System.Text;
 
 namespace WindowCalc.Views
 {
-    public interface ISingleWindowPage
+    public interface IOrderPage
     {
-        void NavigateToOrderPage();
+
     }
 }

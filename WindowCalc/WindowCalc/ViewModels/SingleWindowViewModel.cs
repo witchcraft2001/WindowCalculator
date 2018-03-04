@@ -99,12 +99,13 @@ namespace WindowCalc.ViewModels
             set { SetProperty(ref model, value); }
         }
 
-        public Command OnCalcCommand { get; set; }
+        public Command OrderCommand { get; set; }
         #endregion
 
         public SingleWindowViewModel(ISingleWindowPage view)
         {
             this.view = view;
+            OrderCommand = new Command(DoOrder);
             List<WindowType> types = new List<WindowType>();
             types.Add(new WindowType() { Id = 0, Description = "Глухое окно", Image = "k11.png" });
             types.Add(new WindowType() { Id = 1, Description = "Поворотное окно", Image = "k12.png" });
@@ -136,6 +137,13 @@ namespace WindowCalc.ViewModels
             SelectedLaminate = 0;
         }
 
+        #region Commands
+        private void DoOrder(object obj)
+        {
+            view.NavigateToOrderPage();
+        }
+
+        #endregion
         public string GetDescriptionEnum(Enum item){
             FieldInfo fi = item.GetType().GetField(item.ToString());
             DescriptionAttribute[] attributes = (DescriptionAttribute[])fi.GetCustomAttributes(typeof(DescriptionAttribute), false);

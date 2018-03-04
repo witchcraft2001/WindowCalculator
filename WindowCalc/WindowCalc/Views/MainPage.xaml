@@ -23,7 +23,7 @@
                     </DataTemplate>
                 </controls:CarouselViewControl.ItemTemplate>
             </controls:CarouselViewControl>
-            <Button Text="Выбрать" Command="{Binding OnSelectCommand}" VerticalOptions="Start" HorizontalOptions="Center" Margin="10"/>
+            <Button Text="Выбрать" Command="{Binding OnSelectCommand}" VerticalOptions="Start" Margin="10" Style="{StaticResource buttonStyle}"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

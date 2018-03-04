@@ -10,17 +10,12 @@ using Xamarin.Forms.Xaml;
 namespace WindowCalc.Views
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class SingleWindowPage : ContentPage, ISingleWindowPage
+	public partial class OrderPage : ContentPage, IOrderPage
 	{
-		public SingleWindowPage()
+		public OrderPage()
 		{
 			InitializeComponent();
-            BindingContext = new SingleWindowViewModel(this);
+            BindingContext = new OrderViewModel(this);
         }
-
-        public async void NavigateToOrderPage()
-        {
-            await Navigation.PushAsync(new OrderPage());
-        }
-    }
+	}
 }
